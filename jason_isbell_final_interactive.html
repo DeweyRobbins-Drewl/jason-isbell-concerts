@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Jason Isbell Concert Journey - Complete Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding: 40px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 10px rgba(255,255,255,0.3); }
+            to { text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.5); }
+        }
+        
+        .header p {
+            font-size: 1.5em;
+            opacity: 0.95;
+            margin: 10px;
+        }
+        
+        .journey-dates {
+            font-size: 1.3em;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            display: inline-block;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.1em;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .champion-section {
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            padding: 40px;
+            border-radius: 25px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+        
+        .champion-title {
+            font-size: 3em;
+            color: #2d3436;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .champion-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .crown {
+            font-size: 4em;
+            margin-bottom: 15px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .champion-song {
+            font-size: 2em;
+            font-weight: bold;
+            color: #2d3436;
+            margin-bottom: 15px;
+        }
+        
+        .champion-stat {
+            font-size: 1.3em;
+            color: #666;
+        }
+        
+        .champion-note {
+            margin-top: 15px;
+            font-style: italic;
+            color: #999;
+        }
+        
+        .venue-summary {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .venue-title {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 15px;
+        }
+        
+        .venue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .venue-card {
+            background: linear-gradient(135deg, #f5f5f5, #fff);
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .venue-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .venue-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .venue-shows {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .venue-count {
+            display: inline-block;
+            background: #764ba2;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        
+        .shows-timeline {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .timeline-header {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #764ba2;
+            padding-bottom: 15px;
+        }
+        
+        .year-section {
+            margin-bottom: 30px;
+        }
+        
+        .year-header {
+            font-size: 1.8em;
+            color: #764ba2;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: linear-gradient(to right, #f0f0f0, #fff);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .show-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .show-card {
+            background: #f8f8f8;
+            border-radius: 15px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .show-card:hover {
+            border-color: #764ba2;
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .show-date {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .show-venue {
+            font-size: 1em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .show-type {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85em;
+            margin-top: 5px;
+        }
+        
+        .solo-show {
+            background: #e74c3c;
+        }
+        
+        .co-headline {
+            background: #f39c12;
+        }
+        
+        .view-setlist-btn {
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+        
+        .view-setlist-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #fff, #f8f8f8);
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+        
+        .modal-header {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #764ba2;
+        }
+        
+        .modal-subheader {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .setlist-container {
+            margin-top: 20px;
+        }
+        
+        .setlist-song {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f8f8f8;
+            border-left: 3px solid #667eea;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+        
+        .setlist-song:hover {
+            transform: translateX(5px);
+            background: #f0f0f0;
+        }
+        
+        .song-number {
+            font-weight: bold;
+            color: #764ba2;
+            margin-right: 10px;
+        }
+        
+        .encore-divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #764ba2;
+            font-weight: bold;
+        }
+        
+        .special-note {
+            color: #e74c3c;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        
+        .analysis-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .analysis-title {
+            font-size: 2.2em;
+            color: #333;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        
+        .top-songs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .top-song-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: linear-gradient(to right, #f8f8f8, #fff);
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .top-song-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .song-rank {
+            font-size: 2em;
+            font-weight: bold;
+            color: #764ba2;
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .song-info {
+            flex: 1;
+        }
+        
+        .song-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .song-stats {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 3px;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .show-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎸 Our Jason Isbell Journey 🎸</h1>
+            <p>8 Shows • 154 Songs • Countless Memories</p>
+            <div class="journey-dates">
+                📅 June 9, 2022 → October 25, 2025
+            </div>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">Total Shows</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">154</div>
+                <div class="stat-label">Songs Heard</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">58</div>
+                <div class="stat-label">Unique Songs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">7/1</div>
+                <div class="stat-label">Band/Solo</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">22</div>
+                <div class="stat-label">Cover Songs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Venues</div>
+            </div>
+        </div>
+        
+        <div class="champion-section">
+            <h2 class="champion-title">🏆 The Ultimate Champion</h2>
+            <div class="champion-card">
+                <div class="crown">👑</div>
+                <div class="champion-song">If We Were Vampires</div>
+                <div class="champion-stat">7 of 8 shows (88%)</div>
+                <div class="champion-note">
+                    The only song to achieve near-perfect attendance.<br>
+                    Your most reliable emotional moment across the years.
+                </div>
+            </div>
+        </div>
+        
+        <div class="venue-summary">
+            <h2 class="venue-title">🏛️ Your Concert Venues</h2>
+            <div class="venue-grid">
+                <div class="venue-card">
+                    <div class="venue-name">St. Augustine Amphitheatre <span class="venue-count">3 shows</span></div>
+                    <div class="venue-shows">
+                        Your Florida home venue!<br>
+                        • June 9, 2022 (w/ Sheryl Crow)<br>
+                        • August 12, 2023<br>
+                        • April 9, 2025
+                    </div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Ryman Auditorium <span class="venue-count">3 shows</span></div>
+                    <div class="venue-shows">
+                        The Mother Church of Country Music<br>
+                        • Oct 21-22, 2023 (Residency)<br>
+                        • October 25, 2025 (Residency)
+                    </div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Walt Disney Theater <span class="venue-count">1 show</span></div>
+                    <div class="venue-shows">
+                        Orlando hometown show<br>
+                        • January 19, 2023
+                    </div>
+                </div>
+                <div class="venue-card">
+                    <div class="venue-name">Warner Theatre <span class="venue-count">1 show</span></div>
+                    <div class="venue-shows">
+                        Intimate solo performance<br>
+                        • March 1, 2025 (Solo)
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="shows-timeline">
+            <h2 class="timeline-header">📅 Complete Show Timeline (Chronological)</h2>
+            
+            <div class="year-section">
+                <div class="year-header">2022 (1 Show) - The Beginning</div>
+                <div class="show-grid">
+                    <div class="show-card" onclick="openModal('show1')">
+                        <div class="show-date">June 9, 2022</div>
+                        <div class="show-venue">St. Augustine Amphitheatre</div>
+                        <span class="show-type co-headline">w/ Sheryl Crow</span>
+                        <p style="margin-top: 10px; color: #666;">
+                            <strong>14 Songs</strong><br>
+                            Your first show together! 💕
+                        </p>
+                        <button class="view-setlist-btn">View Full Setlist</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="year-section">
+                <div class="year-header">2023 (4 Shows) - The Year of Discovery</div>
+                <div class="show-grid">
+                    <div class="show-card" onclick="openModal('show2')">
+                        <div class="show-date">January 19, 2023</div>
+                        <div class="show-venue">Walt Disney Theater • Orlando</div>
+                        <span class="show-type">400 Unit</span>
+                        <p style="margin-top: 10px; color: #666;">
+                            <strong>19 Songs</strong><br>
+                            Only Children (for David Crosby)
+                        </p>
+                        <button class="view-setlist-btn">View Full Setlist</button>
+                    </div>
+                    
+                    <div class="show-card" onclick="openModal('show3')">
+                        <div class="show-date">August 12, 2023</div>
+                        <div class="show-venue">St. Augustine Amphitheatre</div>
+                        <span class="show-type">400 Unit</span>
+                        <p style="margin-top: 10px; color: #666;">
+                            <strong>20 Songs</strong><br>
+                            White Beretta appearance
+                        </p>
+                        <button class="view-setlist-btn">View Full Setlist</button>
+                    </div>
+                    
+                    <div class="show-card" onclick="openModal('show4')">
+                        <div class="show-date">October 21, 2023</div>
+                        <div class="show-venue">Ryman Auditorium • Nashville</div>
+                        <span class="show-type">400 Unit • Residency</span>
+                        <p style="margin-top: 10px; color: #666;">
+                            <strong>20 Songs</strong><br>
+                            Streetlights returns!
+                        </p>
+                        <button class="view-setlist-btn">View Full Setlist</button>
+                    </div>
+                    
+                    <div class="show-card" onclick="openModal('show5')">
+                        <div class="show-date">October 22, 2023</div>
+                        <div class="show-venue">Ryman Auditorium • Nashville</div>
+                        <span class="show-type">400 Unit • Residency</span>
+                        <p style="margin-top: 10px; color: #666;">
+                            <strong>21 Songs</strong><br>
+                            Back-to-back Ryman nights
+                        </p>
+                        <button class="view-setlist-btn">View Full Setlist</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="year-section">
+                <div class="year-header">2025 (3 Shows) - The Epic Year</div>
+                <div class="show-grid">
+                    <div class="show-card" onclick="openModal('show6')">
+                        <div class="show-date">March 1, 2025</div>
+                        <div class="show-venue">Warner Theatre • Washington, DC</div>
+                        <span class="show-type solo-show">SOLO SHOW</span>
+                        <p style="margin-top: 10px; color: #666;">
+                            <strong>19 Songs</strong><br>
+                            Intimate acoustic evening
+                        </p>
+                        <button class="view-setlist-btn">View Full Setlist</button>
+                    </div>
+                    
+                    <div class="show-card" onclick="openModal('show7')">
+                        <div class="show-date">April 9, 2025</div>
+                        <div class="show-venue">St. Augustine Amphitheatre</div>
+                        <span class="show-type">400 Unit</span>
+                        <p style="margin-top: 10px; color: #666;">
+                            <strong>20 Songs</strong><br>
+                            Crimson and Clay opener
+                        </p>
+                        <button class="view-setlist-btn">View Full Setlist</button>
+                    </div>
+                    
+                    <div class="show-card" onclick="openModal('show8')">
+                        <div class="show-date">October 25, 2025</div>
+                        <div class="show-venue">Ryman Auditorium • Nashville</div>
+                        <span class="show-type">400 Unit • Residency</span>
+                        <p style="margin-top: 10px; color: #666;">
+                            <strong>21 Songs</strong><br>
+                            🌟 HISTORIC NIGHT!
+                        </p>
+                        <button class="view-setlist-btn">View Full Setlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for Setlists -->
+        <div id="setlistModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Setlist data for each show
+        const setlists = {
+            show1: {
+                date: 'June 9, 2022',
+                venue: 'St. Augustine Amphitheatre',
+                type: 'w/ Sheryl Crow',
+                songs: [
+                    '1. It Gets Easier',
+                    '2. 24 Frames',
+                    '3. What\'ve I Done to Help',
+                    '4. Hope the High Road',
+                    '5. Dreamsicle',
+                    '6. Super 8',
+                    '7. If We Were Vampires',
+                    '8. Honeysuckle Blue (Drivin\' n\' Cryin\' cover)',
+                    '9. Last of My Kind',
+                    '10. Speed Trap Town',
+                    '11. Goddamn Lonely Love (Drive-By Truckers cover)',
+                    '12. Be Afraid',
+                    '13. Cover Me Up',
+                    'ENCORE',
+                    '14. Decoration Day (Drive-By Truckers cover)'
+                ]
+            },
+            show2: {
+                date: 'January 19, 2023',
+                venue: 'Walt Disney Theater, Orlando',
+                type: '400 Unit',
+                songs: [
+                    '1. What\'ve I Done to Help',
+                    '2. Hope the High Road',
+                    '3. Dreamsicle',
+                    '4. 24 Frames',
+                    '5. It Gets Easier',
+                    '6. Last of My Kind',
+                    '7. Traveling Alone',
+                    '8. Be Afraid',
+                    '9. Only Children <span class="special-note">(dedicated to David Crosby)</span>',
+                    '10. Overseas',
+                    '11. Alabama Pines',
+                    '12. Elephant',
+                    '13. Honeysuckle Blue <span class="special-note">(Sadler on vocals)</span>',
+                    '14. Speed Trap Town',
+                    '15. Stockholm',
+                    '16. Flying Over Water',
+                    '17. Cover Me Up',
+                    'ENCORE',
+                    '18. If We Were Vampires',
+                    '19. Decoration Day (Drive-By Truckers cover)'
+                ]
+            },
+            show3: {
+                date: 'August 12, 2023',
+                venue: 'St. Augustine Amphitheatre',
+                type: '400 Unit',
+                songs: [
+                    '1. When We Were Close',
+                    '2. Save the World',
+                    '3. King of Oklahoma',
+                    '4. Strawberry Woman',
+                    '5. The Life You Chose',
+                    '6. Stockholm',
+                    '7. Flying Over Water',
+                    '8. Alabama Pines',
+                    '9. Death Wish',
+                    '10. White Beretta',
+                    '11. Super 8',
+                    '12. Middle of the Morning',
+                    '13. Overseas',
+                    '14. Honeysuckle Blue (Drivin\' n\' Cryin\' cover)',
+                    '15. Cast Iron Skillet',
+                    '16. Miles',
+                    '17. Cover Me Up',
+                    'ENCORE',
+                    '18. 24 Frames',
+                    '19. If We Were Vampires',
+                    '20. This Ain\'t It'
+                ]
+            },
+            show4: {
+                date: 'October 21, 2023',
+                venue: 'Ryman Auditorium, Nashville',
+                type: '400 Unit - Residency',
+                songs: [
+                    '1. 24 Frames',
+                    '2. King of Oklahoma',
+                    '3. When We Were Close',
+                    '4. Strawberry Woman',
+                    '5. Speed Trap Town',
+                    '6. Super 8',
+                    '7. This Ain\'t It',
+                    '8. Save the World',
+                    '9. Cast Iron Skillet',
+                    '10. Middle of the Morning',
+                    '11. Streetlights <span class="special-note">(first since 2021!)</span>',
+                    '12. Overseas',
+                    '13. If You Insist',
+                    '14. Elephant',
+                    '15. Death Wish',
+                    '16. Miles',
+                    '17. Cover Me Up',
+                    'ENCORE',
+                    '18. Alabama Pines',
+                    '19. Just to Know What You\'ve Been Dreaming (Will Johnson cover)',
+                    '20. Decoration Day (Drive-By Truckers cover)'
+                ]
+            },
+            show5: {
+                date: 'October 22, 2023',
+                venue: 'Ryman Auditorium, Nashville',
+                type: '400 Unit - Residency',
+                songs: [
+                    '1. King of Oklahoma',
+                    '2. Hope the High Road',
+                    '3. Something More Than Free',
+                    '4. When We Were Close',
+                    '5. Stockholm',
+                    '6. Last of My Kind',
+                    '7. Strawberry Woman',
+                    '8. Save the World',
+                    '9. Decoration Day (Drive-By Truckers cover)',
+                    '10. Middle of the Morning',
+                    '11. Alabama Pines',
+                    '12. If You Insist',
+                    '13. Super 8',
+                    '14. 24 Frames',
+                    '15. Honeysuckle Blue (Drivin\' n\' Cryin\' cover)',
+                    '16. Cast Iron Skillet',
+                    '17. Miles',
+                    '18. Cover Me Up',
+                    'ENCORE',
+                    '19. Outfit (Drive-By Truckers cover)',
+                    '20. If We Were Vampires',
+                    '21. This Ain\'t It'
+                ]
+            },
+            show6: {
+                date: 'March 1, 2025',
+                venue: 'Warner Theatre, Washington DC',
+                type: 'SOLO SHOW',
+                songs: [
+                    '1. Bury Me',
+                    '2. Only Children',
+                    '3. Middle of the Morning',
+                    '4. King of Oklahoma',
+                    '5. Foxes in the Snow',
+                    '6. Strawberry Woman',
+                    '7. Traveling Alone',
+                    '8. Gravelweed',
+                    '9. Something More Than Free',
+                    '10. Different Days',
+                    '11. Eileen',
+                    '12. Chaos and Clothes',
+                    '13. If We Were Vampires',
+                    '14. Cast Iron Skillet',
+                    '15. Children of Children',
+                    '16. True Believer',
+                    'ENCORE',
+                    '17. Ride to Robert\'s',
+                    '18. Storm Windows (John Prine cover)',
+                    '19. Danko/Manuel (Drive-By Truckers)'
+                ]
+            },
+            show7: {
+                date: 'April 9, 2025',
+                venue: 'St. Augustine Amphitheatre',
+                type: '400 Unit',
+                songs: [
+                    '1. Crimson and Clay',
+                    '2. 24 Frames',
+                    '3. Gravelweed',
+                    '4. Traveling Alone',
+                    '5. This Ain\'t It',
+                    '6. Bury Me',
+                    '7. Dreamsicle',
+                    '8. Eileen',
+                    '9. Miles',
+                    '10. Middle of the Morning',
+                    '11. Outfit (Drive-By Truckers cover)',
+                    '12. Cast Iron Skillet',
+                    '13. Alabama Pines',
+                    '14. Open and Close',
+                    '15. Overseas',
+                    '16. If We Were Vampires',
+                    '17. Decoration Day (Drive-By Truckers cover)',
+                    'ENCORE',
+                    '18. Ride to Robert\'s <span class="special-note">(with Sadler)</span>',
+                    '19. True Believer',
+                    '20. King of Oklahoma'
+                ]
+            },
+            show8: {
+                date: 'October 25, 2025',
+                venue: 'Ryman Auditorium, Nashville',
+                type: '400 Unit - Residency',
+                songs: [
+                    '1. It Gets Easier',
+                    '2. Hope the High Road',
+                    '3. Speed Trap Town',
+                    '4. Bury Me <span class="special-note">(bluegrass version)</span>',
+                    '5. Volunteer',
+                    '6. Songs That She Sang in the Shower',
+                    '7. King of Oklahoma',
+                    '8. Dress Blues',
+                    '9. Strawberry Woman',
+                    '10. Traveling Alone',
+                    '11. Decoration Day (Drive-By Truckers cover)',
+                    '12. Live Oak',
+                    '13. Alabama Pines',
+                    '14. Cigarettes and Wine <span class="special-note">(for Traci Thomas)</span>',
+                    '15. Flying Over Water',
+                    '16. If We Were Vampires',
+                    '17. Something to Love',
+                    '18. Never Gonna Change (Drive-By Truckers cover)',
+                    'ENCORE',
+                    '19. The Shape I\'m In <span class="special-note">(The Band - FIRST TIME EVER!)</span>',
+                    '20. Cast Iron Skillet',
+                    '21. Super 8'
+                ]
+            }
+        };
+        
+        function openModal(showId) {
+            const modal = document.getElementById('setlistModal');
+            const content = document.getElementById('modalContent');
+            const show = setlists[showId];
+            
+            let html = `
+                <div class="modal-header">${show.date}</div>
+                <div class="modal-subheader">${show.venue} • ${show.type}</div>
+                <div class="setlist-container">
+            `;
+            
+            show.songs.forEach(song => {
+                if (song === 'ENCORE') {
+                    html += '<div class="encore-divider">— ENCORE —</div>';
+                } else {
+                    html += `<div class="setlist-song">${song}</div>`;
+                }
+            });
+            
+            html += '</div>';
+            content.innerHTML = html;
+            modal.style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('setlistModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('setlistModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
